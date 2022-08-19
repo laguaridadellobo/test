@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { ImageComponent } from './image/image.component';
+const routes: Routes = [
+  {path:'home', component: ImageComponent},
+  {path:'**', redirectTo: 'home'}
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

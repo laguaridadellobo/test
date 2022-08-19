@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <h1>Subir imagen</h1>
+    <form>
+        <div class="text-center">
+            <label>
+          <input #fileInput type="file" class="form-control" (change)="onChange($event)" required>
+          <div class="invalid-feedback">Subir imagen</div>
+      </label>
+
+
+        </div>
+        <div class="text-center" *ngIf="prev">
+            <br>
+            <img [src]="prev" alt="" class="img-fluid" width="200px" height="auto" alt="Responsive image">
+        </div>
+        <br>
+
+        <div class="text-center">
+            <button (click)="onUpload()" class="btn btn-danger">
+                  Subir Imagen</button>
+        </div>
+
+    </form>
+
+    <div class="container" *ngIf="loading">
+        <h3>Cargando ...</h3>
+    </div>
+
+    <div class="text-center">
+        <div *ngIf="previsualizacion">
+            <h1>Esta imagen fue agregada a nuestro repositorio</h1>
+            <img height="200px" width="auto" [src]="previsualizacion">
+        </div>
+    </div>
+</div>
